@@ -4,11 +4,14 @@ using Entity.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
+
 namespace ToDoList
 {
     public class Startup
@@ -25,6 +28,17 @@ namespace ToDoList
         {
 
             services.AddControllersWithViews();
+            services.AddControllers()
+                //.AddNewtonsoftJson()
+                .AddJsonOptions(jsonOptions =>
+                {
+                    jsonOptions.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+                    jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            //.AddJsonOptions(options =>
+            //options.JsonSerializerOptions.ca.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

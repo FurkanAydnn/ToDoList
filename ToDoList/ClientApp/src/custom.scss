@@ -1,0 +1,67 @@
+/* Provide sufficient contrast against white background */
+// a {
+//   color: #0366d6;
+// }
+
+// code {
+//   color: #e01a76;
+// }
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+body {
+  background-color: #e8e8e84f;
+}
+
+.form-modal {
+  .form-execute-date-area {
+    max-width: 200px;
+  }
+}
+
+.todo-list-card {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  .main-title {
+    margin-bottom: 16px;
+    .add-todo-button {
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      padding: 0;
+      font-size: small;
+    }
+  }
+
+  .todo-list-item-card {
+    max-width: 720px;
+    min-width: 180px;
+    background: linear-gradient(
+      90deg,
+      rgba(250, 229, 229, 1) 0%,
+      rgba(255, 255, 255, 1) 65%,
+      rgba(255, 255, 255, 0.01724439775910369) 100%
+    );
+    border-radius: 100px;
+    .todo-item-area {
+      cursor: pointer;
+      margin-right: 16px;
+    }
+    .check-area {
+      min-width: 20px;
+    }
+    .edit-area {
+      cursor: pointer;
+      color: #6c757d;
+    }
+    .remove-area {
+      cursor: pointer;
+      color: #d63c3c;
+    }
+  }
+}
